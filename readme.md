@@ -17,9 +17,9 @@ require: {
 
 
 ```
-$akademika = new Kepo\Akademika;
-$akademika->username = Input::get('username');
-$akademika->password = Input::get('password');
+$akademika = new Kepoo\Akademika;
+$akademika->username = "YOUR_USERNAME";
+$akademika->password = "YOUR_PASSWORD";
 print_r($akademika->login());
 print_r($akademika->sidebarMenu());
 print_r($akademika->getTranscript());
