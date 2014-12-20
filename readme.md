@@ -1,6 +1,6 @@
-# KEPO 
+# KEPOO 
 
-Kepo is library to access your akademika data. We're not save your username or password, this library just act like interface between your application and akademika database.
+Kepoo is library to access your akademika data. We're not save your username or password, this library just act like interface between your application and akademika database.
 
 
 ## Installation

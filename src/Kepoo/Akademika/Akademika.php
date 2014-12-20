@@ -1,4 +1,4 @@
-<?php namespace Kepo;
+<?php namespace Kepoo;
 
 class Akademika {
 
