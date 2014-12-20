@@ -1,0 +1,27 @@
+{
+	"name": "kepoo/akademika",
+	"type": "library",
+	"description": "Interface to your akademika",
+	"keywords": [
+	"akademika",
+	"ugm",
+	"kepo akademika"
+	],
+	"homepage": "https://github.com/yusyaif/kepoo",
+	"license": "MIT",
+	"authors": [
+	{
+	"name": "Yusuf Syaifudin",
+	"email": "yusuf.syaifudin@gmail.com",
+	"homepage": "http://yusyaif.com/"
+}
+],
+	"require": {
+		"php": ">=5.4.0"
+		},
+	"autoload": {
+		"psr-0": {
+		"Kepoo": "src/"
+		}
+	}
+}

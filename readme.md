@@ -6,6 +6,11 @@ Kepoo is library to access your akademika data. We're not save your username or 
 ## Installation
 You can copy paste this library anywhere and `include` files. But since this library are using PSR-0, you can also get this library via packagist.
 
+```
+require: {
+    "kepoo/akademika": "dev-master"
+}
+```
 
 
 ## Usage
