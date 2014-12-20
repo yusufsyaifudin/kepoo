@@ -144,65 +144,31 @@ class Akademika {
 
 			foreach ($nodes as $node) {
 
+				$i = 0;
 				foreach ($node->getElementsByTagName('th') as $key) {
 					$jsonKey = preg_replace('/\s+/', '_', strtolower($key->nodeValue));
 					$nodeKey[] = [
-					'name' => $key->nodeValue,
-					'key' => $jsonKey
-					];
-
+						'number' => $i,
+						'name' => $key->nodeValue,
+						'key' => $jsonKey
+						];
+					$i++;
 				}
 			}
 
 			$i = 0;
 			foreach ($nodes as $node) {
-
 				$j = 0;
 				foreach ($node->getElementsByTagName('td') as $col) {
-					if ($j == 0) {
-						$number = $col->nodeValue;
+					if ($j == $nodeKey[$j]['number']) {
+						$value = $col->nodeValue;
 						$jsonKey = $nodeKey[$j]['key'];
-						$res[$i][$jsonKey] = $number;
-					}
-
-					if ($j == 1) {
-						$semester = $col->nodeValue;
-						$jsonKey = $nodeKey[$j]['key'];
-						$res[$i][$jsonKey] = $semester;
-					}
-
-					if ($j == 2) {
-						$kode = $col->nodeValue;
-						$jsonKey = $nodeKey[$j]['key'];
-						$res[$i][$jsonKey] = $kode;
-					}
-
-					if ($j == 3) {
-						$matkul = $col->nodeValue;
-						$jsonKey = $nodeKey[$j]['key'];
-						$res[$i][$jsonKey] = $matkul;
-					}
-
-					if ($j == 4) {
-						$sks = $col->nodeValue;
-						$jsonKey = $nodeKey[$j]['key'];
-						$res[$i][$jsonKey] = $sks;
-					}
-
-					if ($j == 5) {
-						$nilai = $col->nodeValue;
-						$jsonKey = $nodeKey[$j]['key'];
-						$res[$i][$jsonKey] = $nilai;
+						$res[$i][$jsonKey] = $value;
 					}
 					$j++;
 				}
-
-
-
-
 				$i++;
 			}
-
 
 			// http://stackoverflow.com/questions/5217721/how-to-remove-array-element-and-then-re-index-array
 			// unset($response[0]);
@@ -210,9 +176,9 @@ class Akademika {
 
 			// reindexing, pretty result
 			$finalResponse = [
-			'header' => $nodeKey,
-			'data'   => $rowLists
-			];
+				'header' => $nodeKey,
+				'data'   => $rowLists
+				];
 
 			return $finalResponse;
 		} catch (\Exception $e) {
